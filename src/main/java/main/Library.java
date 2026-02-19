@@ -20,10 +20,21 @@ public class Library {
         System.out.println("Kirja lisätty kirjastoon!");
     }
 
+    public ArrayList<Book> getBooks() {
+        return BookList;
+    }
+
     public void listBooks() {
+        int numberOfBooks = 0;
         for (Book book : BookList) {
             book.displayInfo();
+            String category = book.categorize();
+            System.out.println("Kirjan kategoria: " + category);
+            numberOfBooks += book.copies;
         }
+        System.out.println("Kirjojen kokonaismäärä kirjastossa on: " + numberOfBooks);
     }
+
+    
 
 }

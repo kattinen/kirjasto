@@ -31,7 +31,6 @@ public class App {
             
                 switch (i) {
                     case 1:
-                        // Lisää kirja
                         System.out.println("Minkä kirjan haluat lisätä kirjastoon? 1) Fiktiokirja, 2) Tietokirja");
                         String typeString = sc.nextLine();
                         int bookType = Integer.parseInt(typeString);
@@ -55,6 +54,7 @@ public class App {
                         break;
                     case 2:
                         // Listaa kirjat
+                        library.listBooks();
                         break;
                     case 3:
                         // Lainaa fiktiokirja
