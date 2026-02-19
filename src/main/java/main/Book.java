@@ -23,8 +23,8 @@ public abstract class Book {
         System.out.println("Nimi: " + title +", Kirjailija: " + author + ", Sivut: " + pages + ", Määrä: " + copies);
     }
 
-    public abstract void categorize();
-    
+    public abstract String categorize();
+
 }
 
 
