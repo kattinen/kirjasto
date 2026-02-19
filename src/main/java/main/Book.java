@@ -7,10 +7,10 @@
 package main;
 
 public abstract class Book {
-    String title;
-    String author;
-    int pages;
-    int copies;
+    protected String title;
+    protected String author;
+    protected int pages;
+    protected int copies;
 
     public Book(String title, String author, int pages, int copies) {
         this.title = title;
