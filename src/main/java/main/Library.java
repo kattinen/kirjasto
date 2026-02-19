@@ -32,7 +32,7 @@ public class Library {
             System.out.println("Kirjan kategoria: " + category);
             numberOfBooks += book.copies;
         }
-        System.out.println("Kirjojen kokonaismäärä kirjastossa on: " + numberOfBooks);
+        System.out.println("Kirjojen määrä kirjastossa on: " + numberOfBooks);
     }
 
     
