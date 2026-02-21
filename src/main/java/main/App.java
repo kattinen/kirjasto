@@ -1,13 +1,12 @@
 // Kirjasto
 // App.java
 // Kati Liukkonen
-// Luokkien periytyminen ja abstrakti luokka
+// Luokkien periytyminen, abstrakti luokka ja rajapinta
 // Visual Studio code, Java 21, Maven
 
 package main;
 
 import java.util.Scanner;
-
 
 public class App {
     public static void main(String[] args) {
@@ -53,14 +52,37 @@ public class App {
                         }
                         break;
                     case 2:
-                        // Listaa kirjat
                         library.listBooks();
                         break;
                     case 3:
-                        // Lainaa fiktiokirja
+                        System.out.println("Anna lainattavan kirjan nimi:");
+                        String borrowBook = sc.nextLine();
+                        boolean match = false;
+                        for (Book book : library.getBooks()) {
+                            if (book.title.equals(borrowBook) && book instanceof Borrowable) {
+                                ((Borrowable) book).borrow();
+                                match = true;
+                                break;
+                            }
+                        }
+                        if (!match) {
+                            System.out.println("Kirjaa ei löytynyt tai sitä ei voi lainata.");
+                        }
                         break;
                     case 4:
-                        // Palauta fiktiokirja
+                        System.out.println("Anna palautettavan kirjan nimi:");
+                        String returnBook = sc.nextLine();
+                        match = false;
+                        for (Book book : library.getBooks()) {
+                            if (book.title.equals(returnBook) && book instanceof Borrowable) {
+                                ((Borrowable) book).returnBook();
+                                match = true;
+                                break;
+                            }
+                        }
+                        if (!match) {
+                            System.out.println("Kirjaa ei löytynyt tai sitä ei voi palauttaa.");
+                        }
                         break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");

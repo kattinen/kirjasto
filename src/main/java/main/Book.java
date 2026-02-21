@@ -1,7 +1,7 @@
 // Kirjasto
 // Book.java
 // Kati Liukkonen
-// Luokkien periytyminen ja abstrakti luokka
+// Luokkien periytyminen, abstrakti luokka ja rajapinta
 // Visual Studio code, Java 21, Maven
 
 package main;
